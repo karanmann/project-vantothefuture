@@ -1,0 +1,135 @@
+$background-twilight: linear-gradient(to bottom, #355c7d, #6c5b7b, #c06c84);
+$sun-gradient: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(240, 225, 118) 76%);
+$sun-shadow: -4px -3px 78px 50px rgba(251,238,136,0.75);
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: $background-twilight;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.watch-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  
+  .watch {
+
+    .sun{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em;
+    background: $sun-gradient;
+    box-shadow: $sun-shadow;
+
+    .clock {
+      font-size: 1.5em;
+      font-weight: 900;
+      // font-family: 'Orbitron', sans-serif;
+    }
+    }
+  }
+
+  .weather {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+
+    .temp-icon {
+      height: 5em;
+      width:  5em;
+      margin-right: 2em;
+    };
+
+    .weather-content {
+      .city-name {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .alarm {
+
+    .alarm-input {
+      border: none;
+      background: rgba(121,93,124, 0.2);
+      padding: 6px 12px;
+      border-radius: 10px;
+      border: 2px solid grey;
+      font-family: 'Roboto', sans-serif;
+    }
+    .set-alarm,
+    .stop-alarm {
+      border:none;
+      background-color: #2980b9;
+      padding: 10px 15px;
+      color: #FFF;
+      cursor: pointer;
+      border-radius: 10px;
+      &:hover {
+        gap: 2px;
+        transform: scale(1.05);
+        transition: 0.2s ease-out;
+
+      }
+    }
+
+    .set-alarm {
+      background-color: rgba(55, 121, 160, 0.767);
+      margin: 0px 10px;
+      &:hover {
+        background-color: rgba(55, 121, 160, 1);
+      
+      }
+    }
+    .stop-alarm {
+      background-color: rgba(199, 70, 70, 0.767);
+      &:hover {
+        background-color: rgba(199, 70, 70, 1);
+      }
+    }
+  }
+  .surface {
+    height: 150px;
+    width: 500%;
+    background: url("../assets/images/Img_02.png");
+    display: block;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background-repeat: repeat-x;
+    animation: moveRight 6s linear infinite;
+  }
+
+  .car {
+    position: absolute;
+    bottom: 50px;
+    right: 30%;
+    animation: suspension 1s linear infinite;
+  }
+
+  @keyframes moveRight {
+    100% { transform: translate(-1300px);}
+  }
+
+  @keyframes suspension {
+    100% { transform: translateY(-1px);};
+    50% { transform: translateY(2px);};
+    0% { transform: translateY(-1px);};
+  }
+}

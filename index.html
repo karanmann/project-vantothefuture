@@ -5,22 +5,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Van to the Future</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-  <section>
-    <h1>Watch</h1>
-  </section>
-  <section>
-    <h1>Timer</h1>
-  </section>
-  <section>
-    <h1>Alarm</h1>
-  </section>
+  <div class="watch-container">
+    <section class="watch">
+      <div class="sun">
+        <div id="clock" class="clock"></div>
+      </div>
+    </section>
+    <section class="weather">
+      <img class="temp-icon" id="temp-icon" src="./assets/icons/default.png" alt="weather Icon">
+      <div class="weather-content">
+        <p class="city-name" id="currentCityName">Loading...</p>
+        <p><span id="temp-value">Loading...</span><span id="temp-unit">&degc</span>  /  <span id="climate">Loading...</span></p>
+      </div>
+    </section>
+    <section>
+      <h1>Timer</h1>
+    </section>
+    <section class="alarm">
+      <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
+      <button class="set-alarm" onclick="setAlarm()">Set Alarm</button>
+      <button class="stop-alarm" onclick="stopAlarm()">Stop Alarm</button>
+    </section>
+    <div class="surface"></div>
+    <div class="car">
+      <img src="./assets/images/Img_06.png" alt="">
+    </div>
+  </div>
 
   <script src="./scripts/alarmClock.js"></script>
   <script src="./scripts/countDownTimer.js"></script>
   <script src="./scripts/main.js"></script>
   <script src="./scripts/watch.js"></script>
+  <script src="./scripts/weather.js"></script>
 </body>
 </html>
