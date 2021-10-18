@@ -12,7 +12,6 @@ const clock = () => {
   second.style.transform = `rotate(${sec_rotation}deg)`;
 } 
 
-
 const updateDate = () => {
   var fullDate = new Date();
 
