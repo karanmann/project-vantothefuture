@@ -1,7 +1,7 @@
-let dd = document.querySelector('#day');
-let hh = document.querySelector('#hour');
-let mm = document.querySelector('#minute');
-let ss = document.querySelector('#second');
+let dd = document.querySelector('#timer-day');
+let hh = document.querySelector('#timer-hour');
+let mm = document.querySelector('#timer-minute');
+let ss = document.querySelector('#timer-second');
 
 let input = document.querySelector('input');
 let startBtn = document.querySelector('#start');

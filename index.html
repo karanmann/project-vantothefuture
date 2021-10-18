@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Countdown Light</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,43 +52,37 @@
     </section>
     <section>
       <div class="container">
-    <div class="wrapper">
+      <div class="wrapper">
         <div class="title">
-            <h1>Countdown</h1>
+          <h1>Countdown</h1>
         </div>
-
         <div class="counter-area">
-            <div class="timer">
-                <h1 class="count" id="day">00</h1>
-                <span>days</span>
-            </div>
-
-            <div class="timer">
-                <h1 class="count" id="hour">00</h1>
-                <span>hours</span>
-            </div>
-
-            <div class="timer">
-                <h1 class="count" id="minute">00</h1>
-                <span>minutes</span>
-            </div>
-
-            <div class="timer">
-                <h1 class="count" id="second">00</h1>
-                <span>seconds</span>
-            </div>
+          <div class="timer">
+            <h1 class="count" id="timer-day">00</h1>
+            <span>days</span>
+          </div>
+          <div class="timer">
+            <h1 class="count" id="timer-hour">00</h1>
+            <span>hours</span>
+          </div>
+          <div class="timer">
+            <h1 class="count" id="timer-minute">00</h1>
+            <span>minutes</span>
+          </div>
+          <div class="timer">
+            <h1 class="count" id="timer-second">00</h1>
+            <span>seconds</span>
+          </div>
         </div>
-
         <div class="input-area">
-            <input type="datetime-local">
+          <input type="datetime-local">
         </div>
-
         <div class="button-area">
             <button id="start">Start</button>
             <button id="reset" disabled>Reset</button>
         </div>
-    </div>
-</div>
+        </div>
+      </div>
     </section>
     <section class="alarm">
       <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
