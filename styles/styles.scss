@@ -5,6 +5,266 @@
     font-size: 14px;
 }
 
+
+
+$background-twilight: linear-gradient(to bottom, #355c7d, #6c5b7b, #c06c84);
+$sun-gradient: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(240, 225, 118) 76%);
+$sun-shadow: -4px -3px 78px 50px rgba(251,238,136,0.75);
+@import "../styles/watch.scss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: $background-twilight;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.watch-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  
+  .watch {
+
+    .sun{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em;
+    background: $sun-gradient;
+    box-shadow: $sun-shadow;
+
+    .clock {
+      font-size: 1.5em;
+      font-weight: 900;
+      // font-family: 'Orbitron', sans-serif;
+    }
+    }
+  }
+
+  .weather {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+
+    .temp-icon {
+      height: 5em;
+      width:  5em;
+      margin-right: 2em;
+    };
+
+    .weather-content {
+      .city-name {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .alarm {
+
+    .alarm-input {
+      border: none;
+      background: rgba(121,93,124, 0.2);
+      padding: 6px 12px;
+      border-radius: 10px;
+      border: 2px solid grey;
+      font-family: 'Roboto', sans-serif;
+    }
+    .set-alarm,
+    .stop-alarm {
+      border:none;
+      background-color: #2980b9;
+      padding: 10px 15px;
+      color: #FFF;
+      cursor: pointer;
+      border-radius: 10px;
+      &:hover {
+        gap: 2px;
+        transform: scale(1.05);
+        transition: 0.2s ease-out;
+
+      }
+    }
+
+    .set-alarm {
+      background-color: rgba(55, 121, 160, 0.767);
+      margin: 0px 10px;
+      &:hover {
+        background-color: rgba(55, 121, 160, 1);
+      
+      }
+    }
+    .stop-alarm {
+      background-color: rgba(199, 70, 70, 0.767);
+      &:hover {
+        background-color: rgba(199, 70, 70, 1);
+      }
+    }
+  }
+  .surface {
+    height: 150px;
+    width: 500%;
+    background: url("../assets/images/Img_02.png");
+    display: block;
+    position: absolute;
+    bottom:0;
+    left: 0;
+    background-repeat: repeat-x;
+    animation: moveRight 6s linear infinite;
+  }
+
+  .car {
+    position: absolute;
+    bottom: 50px;
+    right: 30%;
+    animation: suspension 1s linear infinite;
+  }
+
+  @keyframes moveRight {
+    100% { transform: translate(-1300px);}
+  }
+
+  @keyframes suspension {
+    100% { transform: translateY(-1px);};
+    50% { transform: translateY(2px);};
+    0% { transform: translateY(-1px);};
+  }
+}
+
+#clockContainer {
+  position: relative;
+  margin: auto;
+  height: 100%;
+  /*to make the height and width responsive*/
+  width: 100%;
+  background: url(./imgonlinecomuaCompressToSizeOmNATjUMFKw-300x300.jpeg) no-repeat;
+  /*setting our background image*/
+  background-size: 100%;
+}
+
+#hour,
+#minute,
+#second {
+  position: absolute;
+  background: black;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+#hour {
+  width: 1.8%;
+  height: 25%;
+  top: 25%;
+  left: 48.85%;
+  opacity: 0.8;
+}
+
+#minute {
+  width: 1.6%;
+  height: 30%;
+  
+  top: 19%;
+  left: 48.9%;
+  opacity: 0.8;
+}
+
+#second {
+  width: 1%;
+  height: 40%;
+  top: 9%;
+  left: 49.25%;
+  opacity: 0.8;
+  background-color: red;
+}
+
+
+.clock {
+  width : 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clock .number {
+  --rotation : 0;
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation)) ;
+}
+
+.clock .number1 { --rotation: 30deg; }
+.clock .number2 { --rotation: 60deg; }
+.clock .number3 { --rotation: 90deg; }
+.clock .number4 { --rotation: 120deg; }
+.clock .number5 { --rotation: 150deg; }
+.clock .number6 { --rotation: 180deg; }
+.clock .number7 { --rotation: 210deg; }
+.clock .number8 { --rotation: 240deg; }
+.clock .number9 { --rotation: 270deg; }
+.clock .number10 { --rotation: 300deg; }
+.clock .number11 { --rotation: 330deg; }
+
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  transition: 1.8s linear;
+}
+
+.clock .hand.hour {
+  width: 10px;
+  height: 25%;  
+  background-color: black;
+}
+
+.clock .hand.minute {
+  width: 7px;
+  height: 45%;  
+  background-color: black;
+}
+
+
+.clock .hand.second {
+  width: 3px;
+  height: 45%;  
+  background-color:red;
+}
+
+.clock .circle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: black;
+  
+}
+
+
+// Santiago
 .container {
     display: flex;
     height: 100vh;

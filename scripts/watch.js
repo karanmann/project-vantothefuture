@@ -1,36 +1,42 @@
-// function timeWatch(){
-//     const myDate = new Date()
-//     console.log(mydate);
-//     const myDateFormatted = formatDate(myDate)
-//     document.getElementById("clock_time") .innerHTML = time;
-// }
-// timeWatch();
+const clock = () => {
+  date = new Date(); //object of date()
+  hr = date.getHours();
+  min = date.getMinutes();
+  sec = date.getSeconds();
+  hr_rotation = 30 * hr + min / 2; //converting current time
+  min_rotation = 6 * min;
+  sec_rotation = 6 * sec;
 
-// console.log(myDateFormatted);
+  hour.style.transform = `rotate(${hr_rotation}deg)`;
+  minute.style.transform = `rotate(${min_rotation}deg)`;
+  second.style.transform = `rotate(${sec_rotation}deg)`;
+} 
 
-//////////////////////////////////////////////////////////////////////////
-// function  timeWatch(){
-// var now = new Date();
-//   time = now.toLocaleTimeString();
-//   clock.textContent = time;
-//   document.getElementById("clock_time") .innerHTML = time;
+const updateDate = () => {
+  var fullDate = new Date();
 
-//   console.log(time);
-// }
+  var monthList = [
+  'January', 
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+  ];
 
-// timeWatch();
-// ////////////////////////////////////////////////////////////////////////
-// let currentTime = () => {
-//     var date = new Date(); /* creating object of Date class */
-//     var hour = date.getHours();
-//     var min = date.getMinutes();
-//     var sec = date.getSeconds();
-//     hour = updateTime(hour);
-//     min = updateTime(min);
-//     sec = updateTime(sec);
-//     document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
-    
-//     secondTimer = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
-//   }
-  
-//   function updateTime(secondTimer);
+  var year = fullDate.getFullYear();
+  var month = monthList[fullDate.getMonth()];
+  var date = fullDate.getDate();
+  let today = `${month} ${date},${year}`;
+  document.querySelector('#date').innerText = today;
+};
+
+setInterval(clock, 1000);
+updateDate();
+
