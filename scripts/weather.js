@@ -16,7 +16,7 @@ const fetchWeather = () => {
   .then((response) => {return response.json();})
   .then(data => {
     //CONSOLE LOG TO SEE API DATA
-    // console.log(data);
+    console.log(data);
     const { id, main } = data.weather[0];
     cityLocation.textContent = data.name;
     tempValue.textContent = ((data.main.temp - 273).toFixed(1));
@@ -49,7 +49,7 @@ const fetchWeather = () => {
     };
   })
   .catch((error) => {
-    console.log('There has been an error')
+    console.log('There has been an error');
   })
 };
 

@@ -26,6 +26,7 @@ function updateTime(secondTimer) {
 }
 
 function setAlarmTime(value) {
+  if (localStorage.getItem("alarmTime"))
   alarmTime = value;
 }
 
@@ -33,12 +34,13 @@ function setAlarm() {
   if(alarmTime) {
     const current = new Date();
     const timeToAlarm = new Date(alarmTime);
-
+    
     if (timeToAlarm > current) {
       const timeout = timeToAlarm.getTime() - current.getTime();
       alarmTimeout = setTimeout(() => audio.play(), timeout);
-      alert('Alarm set');
+      // alert('Alarm set');
     }
+    localStorage.setItem("alarmTime", input.val())
   }
 }
 
@@ -46,7 +48,7 @@ function stopAlarm() {
   audio.pause();
   if (alarmTimeout) {
     clearTimeout(alarmTimeout);
-    alert('Stop Alarm');
+    alert('Alarm Stopped');
   }
 }
 
