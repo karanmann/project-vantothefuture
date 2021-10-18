@@ -1,5 +1,12 @@
 const display = document.getElementById("clock");
 
+function getStoredTime () {
+  var storedTime = localStorage.getItem("alarmTime")
+  document.getElementById("alarm-start-time").value = storedTime
+}
+
+getStoredTime () 
+
 const audio = new Audio("../assets/music/bensound-memories.mp3");
 audio.loop = true;
 
@@ -26,7 +33,6 @@ function updateTime(secondTimer) {
 }
 
 function setAlarmTime(value) {
-  if (localStorage.getItem("alarmTime"))
   alarmTime = value;
 }
 
@@ -38,9 +44,11 @@ function setAlarm() {
     if (timeToAlarm > current) {
       const timeout = timeToAlarm.getTime() - current.getTime();
       alarmTimeout = setTimeout(() => audio.play(), timeout);
-      // alert('Alarm set');
+      alert('Alarm set');
     }
-    localStorage.setItem("alarmTime", input.val())
+    let pickedTime = document.getElementById("alarm-start-time").value
+    console.log(pickedTime)
+    localStorage.setItem("alarmTime", pickedTime)
   }
 }
 
@@ -49,6 +57,7 @@ function stopAlarm() {
   if (alarmTimeout) {
     clearTimeout(alarmTimeout);
     alert('Alarm Stopped');
+    localStorage.clear();
   }
 }
 

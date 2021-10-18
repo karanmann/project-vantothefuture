@@ -9,6 +9,22 @@ let resetBtn = document.querySelector('#reset');
 
 let countDown;
 
+var storedAlarmTime = localStorage.getItem("alarmTime")
+
+// function getStoredAlarmTime() {
+//   document.getElementById("alarm-start-time").value = storedAlarmTime
+// }
+
+var  startDate = new Date();
+// Do your operations
+var endDate  = storedAlarmTime;
+var seconds = (storedAlarmTime.getTime() - startDate.getTime()) / 1000;
+
+console.log(seconds)
+console.log(storedAlarmTime)
+
+// getStoredAlarmTime()
+
 let timeCount = function (val) {
 
     let eventTime = new Date(val).getTime();
@@ -52,6 +68,13 @@ let timeCount = function (val) {
         clearInterval(countDown);
     }
 
+
+    //get current date #
+    //get storedate #
+    // create date from stored 
+    //get the differens use getTime()
+    // from difference new date 
+    //print new date getHours() etc
     dd.innerHTML = days;
     hh.innerHTML = hours;
     mm.innerHTML = minutes;
