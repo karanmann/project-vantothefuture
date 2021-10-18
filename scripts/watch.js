@@ -39,3 +39,4 @@ const updateDate = () => {
 
 setInterval(clock, 1000);
 updateDate();
+

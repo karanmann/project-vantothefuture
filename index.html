@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Countdown Light</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Van to the Future</title>
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
+
   <div class="watch-container">
     <section class="watch">
       <div class="sun">
@@ -44,7 +52,44 @@
       </div>
     </section>
     <section>
-      <h1>Timer</h1>
+      <div class="container">
+    <div class="wrapper">
+        <div class="title">
+            <h1>Countdown</h1>
+        </div>
+
+        <div class="counter-area">
+            <div class="timer">
+                <h1 class="count" id="day">00</h1>
+                <span>days</span>
+            </div>
+
+            <div class="timer">
+                <h1 class="count" id="hour">00</h1>
+                <span>hours</span>
+            </div>
+
+            <div class="timer">
+                <h1 class="count" id="minute">00</h1>
+                <span>minutes</span>
+            </div>
+
+            <div class="timer">
+                <h1 class="count" id="second">00</h1>
+                <span>seconds</span>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="datetime-local">
+        </div>
+
+        <div class="button-area">
+            <button id="start">Start</button>
+            <button id="reset" disabled>Reset</button>
+        </div>
+    </div>
+</div>
     </section>
     <section class="alarm">
       <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
@@ -56,6 +101,7 @@
       <img src="./assets/images/Img_06.png" alt="">
     </div>
   </div>
+
   <script src="./scripts/alarmClock.js"></script>
   <script src="./scripts/countDownTimer.js"></script>
   <script src="./scripts/main.js"></script>
