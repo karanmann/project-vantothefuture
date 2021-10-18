@@ -251,4 +251,9 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   background-color: black;
+  
+@import "../styles/watch.scss";
+
+*{
+    box-sizing:border-box;
 }

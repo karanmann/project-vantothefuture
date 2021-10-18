@@ -1,4 +1,3 @@
-
 const clock = () => {
   date = new Date(); //object of date()
   hr = date.getHours();
