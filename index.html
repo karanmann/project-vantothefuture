@@ -41,7 +41,7 @@
     </section>
 
     <div class="bottom-container">
-      <section class="timer">
+      <section class="timer-function">
         <div class="container">
           <div class="wrapper">
             <div class="counter-area">
@@ -62,12 +62,10 @@
                 <span>seconds</span>
               </div>
             </div>
-            <div class="input-area">
-              <input type="datetime-local" id="timer-time-input">
-            </div>
+            <input class="timer-input" type="datetime-local" id="timer-time-input">
             <div class="button-area">
-              <button id="start">Start</button>
-              <button id="reset" disabled>Reset</button>
+              <button class="set-button" id="start">Start</button>
+              <button class="stop-button" id="reset" disabled>Reset</button>
             </div>
           </div>
         </div>
@@ -86,8 +84,10 @@
       </section>
       <section class="alarm">
         <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
-        <button class="set-alarm" onclick="setAlarm()">Set Alarm</button>
-        <button class="stop-alarm" onclick="stopAlarm()">Stop Alarm</button>
+        <div class="button-area">
+          <button class="set-button" onclick="setAlarm()">Set Alarm</button>
+          <button class="stop-button" onclick="stopAlarm()">Stop Alarm</button>
+        </div>
       </section>
     </div>
     <div class="surface"></div>

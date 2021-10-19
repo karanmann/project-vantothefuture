@@ -122,7 +122,7 @@
   background-color: black;
 }
 
-.timer .container .wrapper .counter-area {
+.timer-function .container .wrapper .counter-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,7 +131,7 @@
           justify-content: center;
 }
 
-.timer .container .wrapper .counter-area .timer {
+.timer-function .container .wrapper .counter-area .timer {
   margin: 0 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,69 +145,28 @@
           justify-content: center;
 }
 
-.timer .container .wrapper .counter-area .timer .count {
+.timer-function .container .wrapper .counter-area .timer .count {
   color: #2e2e3f;
   text-align: center;
   width: 100%;
   font-size: 2rem;
 }
 
-.timer .container .wrapper .counter-area .timer span {
+.timer-function .container .wrapper .counter-area .timer span {
   color: #2e2e3f;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
 }
 
-.timer .container .wrapper .counter-area .input-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.timer .container .wrapper .counter-area .input-area input {
-  padding: 0 1.6rem;
-  height: 3rem;
-  width: 80%;
-  color: #2e2e3f;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
-  border: 3px solid #2e2e3f;
-  border-radius: 0.2rem;
-  outline: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.timer .container .wrapper .counter-area .button-area {
-  margin-top: 2.6rem;
-  padding-bottom: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.timer .container .wrapper .counter-area .button-area button {
+.timer-function .container .wrapper .timer-input {
+  margin-top: 20px;
   border: none;
-  background-color: #2980b9;
-  padding: 10px 15px;
-  color: #FFF;
-  cursor: pointer;
+  background: rgba(121, 93, 124, 0.2);
+  padding: 6px 12px;
   border-radius: 10px;
-}
-
-.timer .container .wrapper .counter-area .button-area button:hover {
-  gap: 2px;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
+  border: 2px solid grey;
+  font-family: 'Roboto', sans-serif;
 }
 
 .alarm {
@@ -227,41 +186,6 @@
   border-radius: 10px;
   border: 2px solid grey;
   font-family: 'Roboto', sans-serif;
-}
-
-.alarm .set-alarm,
-.alarm .stop-alarm {
-  border: none;
-  background-color: #2980b9;
-  padding: 10px 15px;
-  color: #FFF;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-.alarm .set-alarm:hover,
-.alarm .stop-alarm:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
-}
-
-.alarm .set-alarm {
-  background-color: rgba(55, 121, 160, 0.767);
-}
-
-.alarm .set-alarm:hover {
-  background-color: #3779a0;
-}
-
-.alarm .stop-alarm {
-  background-color: rgba(199, 70, 70, 0.767);
-}
-
-.alarm .stop-alarm:hover {
-  background-color: #c74646;
 }
 
 .weather {
@@ -289,6 +213,56 @@
 
 .weather .weather-content .city-name {
   font-weight: 600;
+}
+
+.button-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-area .set-button {
+  background-color: rgba(55, 121, 160, 0.767);
+}
+
+.button-area .set-button:hover {
+  background-color: #3779a0;
+}
+
+.button-area .stop-button {
+  background-color: rgba(199, 70, 70, 0.767);
+}
+
+.button-area .stop-button:hover {
+  background-color: #c74646;
+}
+
+.button-area .set-button,
+.button-area .stop-button {
+  border: none;
+  padding: 10px 15px;
+  color: #FFF;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button-area .set-button:hover,
+.button-area .stop-button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 html, body {
