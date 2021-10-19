@@ -39,56 +39,57 @@
         <div class="circle"></div>
       </div>
     </section>
-    <section>
-      <div id="clock"></div>
-      <div id="date"></div>
-    </section>
-    <section class="weather">
-      <img class="temp-icon" id="temp-icon" src="./assets/icons/default.png" alt="weather Icon">
-      <div class="weather-content">
-        <p class="city-name" id="currentCityName">Loading...</p>
-        <p><span id="temp-value">Loading...</span><span id="temp-unit">&degc</span>  /  <span id="climate">Loading...</span></p>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-      <div class="wrapper">
-        <div class="title">
-          <h1>Countdown</h1>
-        </div>
-        <div class="counter-area">
-          <div class="timer">
-            <h1 class="count" id="timer-day">00</h1>
-            <span>days</span>
-          </div>
-          <div class="timer">
-            <h1 class="count" id="timer-hour">00</h1>
-            <span>hours</span>
-          </div>
-          <div class="timer">
-            <h1 class="count" id="timer-minute">00</h1>
-            <span>minutes</span>
-          </div>
-          <div class="timer">
-            <h1 class="count" id="timer-second">00</h1>
-            <span>seconds</span>
+
+    <div class="bottom-container">
+      <section class="timer">
+        <div class="container">
+          <div class="wrapper">
+            <div class="counter-area">
+              <div class="timer">
+                <h1 class="count" id="timer-day">00</h1>
+                <span>days</span>
+              </div>
+              <div class="timer">
+                <h1 class="count" id="timer-hour">00</h1>
+                <span>hours</span>
+              </div>
+              <div class="timer">
+                <h1 class="count" id="timer-minute">00</h1>
+                <span>minutes</span>
+              </div>
+              <div class="timer">
+                <h1 class="count" id="timer-second">00</h1>
+                <span>seconds</span>
+              </div>
+            </div>
+            <div class="input-area">
+              <input type="datetime-local" id="timer-time-input">
+            </div>
+            <div class="button-area">
+              <button id="start">Start</button>
+              <button id="reset" disabled>Reset</button>
+            </div>
           </div>
         </div>
-        <div class="input-area">
-          <input type="datetime-local">
-        </div>
-        <div class="button-area">
-            <button id="start">Start</button>
-            <button id="reset" disabled>Reset</button>
-        </div>
-        </div>
-      </div>
-    </section>
-    <section class="alarm">
-      <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
-      <button class="set-alarm" onclick="setAlarm()">Set Alarm</button>
-      <button class="stop-alarm" onclick="stopAlarm()">Stop Alarm</button>
-    </section>
+      </section>
+
+      <section>
+        <div id="clock"></div>
+        <div id="date"></div>
+        <section class="weather">
+          <img class="temp-icon" id="temp-icon" src="./assets/icons/default.png" alt="weather Icon">
+          <div class="weather-content">
+            <p class="city-name" id="currentCityName">Loading...</p>
+            <p><span id="temp-value">Loading...</span><span id="temp-unit">&degc</span>  /  <span id="climate">Loading...</span></p>
+          </div>
+        </section>
+      </section>
+      <section class="alarm">
+        <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
+        <button class="set-alarm" onclick="setAlarm()">Set Alarm</button>
+        <button class="stop-alarm" onclick="stopAlarm()">Stop Alarm</button>
+      </section>
+    </div>
     <div class="surface"></div>
     <div class="car">
       <img src="./assets/images/Img_06.png" alt="">

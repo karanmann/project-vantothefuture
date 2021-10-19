@@ -2,7 +2,8 @@
 const enteredCityLocation = "Stockholm";
 
 //API's
-const API_ONE_DAY = `https://api.openweathermap.org/data/2.5/weather?q=${enteredCityLocation}&appid=a77136eb90fd8d858de1f60c1ae1ee51`;
+const API_KEY = "a77136eb90fd8d858de1f60c1ae1ee51"
+const API_ONE_DAY = `https://api.openweathermap.org/data/2.5/weather?q=${enteredCityLocation}&appid=${API_KEY}`;
 
 let cityLocation = document.getElementById("currentCityName");
 let tempIcon = document.getElementById("temp-icon");
