@@ -1,4 +1,4 @@
-const display = document.getElementById("clock");
+const display = document.getElementById("digital-watch");
 
 const audio = new Audio("../assets/music/bensound-memories.mp3");
 audio.loop = true;

@@ -1,7 +1,7 @@
 $background-twilight: linear-gradient(to bottom, #355c7d, #6c5b7b, #c06c84);
 $sun-gradient: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(240, 225, 118) 76%);
 $sun-shadow: -4px -3px 78px 50px rgba(251,238,136,0.75);
-
+$font-color: #2e2e3f;
 @import "./watch";
 @import "./timer";
 @import "./alarm";
@@ -12,7 +12,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  // overflow: hidden;
+  color: $font-color;
 }
 
 body {

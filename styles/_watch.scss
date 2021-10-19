@@ -11,6 +11,7 @@
     margin: 2em;
     background: $sun-gradient;
     box-shadow: $sun-shadow;
+    position: relative;
 
     .clock {
       width : 100%;
@@ -20,7 +21,8 @@
       
       .number {
       --rotation : 0;
-      font-size: 12px;
+      font-size: 1rem;
+      font-weight: 700;
       position: absolute;
       width: 100%;
       height: 100%;
@@ -52,22 +54,29 @@
       }
 
       .hand.hour {
-        width: 3px;
+        width: 4px;
         height: 25%;  
-        background-color: black;
+        background-color: $font-color;
       }
 
       .hand.minute {
-        width: 3px;
+        width: 4px;
         height: 40%;  
-        background-color: black;
+        background-color: $font-color;
       }
 
       .hand.second {
-        width: 1px;
+        width: 2px;
         height: 40%;  
-        background-color:red;
+        background-color:rgb(244, 67, 67);
       }
+
+      .hand.hour,
+      .hand.minute,
+      .hand.second {
+        z-index: 5
+      }
+
 
       .circle {
         position: absolute;
@@ -77,9 +86,22 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        background-color: black;
-        
-      }     
+        background-color: $font-color;;
+      }
+
+      .digital-watch-container {
+        width:50%;
+        transform: translate(47%, 500%);
+        font-size: 0.8em;
+        letter-spacing: 2px;
+        font-weight: 500;
+        position: absolute;
+        z-index:1;
+        border-radius: 10px;
+        background: linear-gradient(145deg, #d8cb6a, #fff17e);
+        box-shadow:  22px 22px 44px #978e4a, -22px -22px 44px #ffffa2;
+        padding: 5px;
+      }
     }
   }
 }

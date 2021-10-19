@@ -1,15 +1,13 @@
-
 .alarm {
   display: flex;
   flex-direction: column;
   .alarm-input {
     border: none;
     background: rgba(121,93,124, 0.2);
+    color: $font-color;
     padding: 6px 12px;
     border-radius: 10px;
     border: 2px solid grey;
     font-family: 'Roboto', sans-serif;
-  }
-  
-  
+  }  
 }

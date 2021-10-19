@@ -37,7 +37,12 @@
           <div class="hand second" id="second"></div>
         </div> 
         <div class="circle"></div>
+        <div class="digital-watch-container">
+          <div class="digital-watch" id="digital-watch"></div>
+          <div class="todays-date" id="todays-date"></div>
+        </div>
       </div>
+      
     </section>
 
     <div class="bottom-container">
@@ -72,16 +77,15 @@
       </section>
 
       <section>
-        <div id="clock"></div>
-        <div id="date"></div>
-        <section class="weather">
+        <div class="weather">
           <img class="temp-icon" id="temp-icon" src="./assets/icons/default.png" alt="weather Icon">
           <div class="weather-content">
             <p class="city-name" id="currentCityName">Loading...</p>
             <p><span id="temp-value">Loading...</span><span id="temp-unit">&degc</span>  /  <span id="climate">Loading...</span></p>
           </div>
-        </section>
+        </div>
       </section>
+
       <section class="alarm">
         <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
         <div class="button-area">

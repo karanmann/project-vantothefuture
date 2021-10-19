@@ -15,6 +15,7 @@
   background: radial-gradient(circle, white 0%, #f0e176 76%);
   -webkit-box-shadow: -4px -3px 78px 50px rgba(251, 238, 136, 0.75);
           box-shadow: -4px -3px 78px 50px rgba(251, 238, 136, 0.75);
+  position: relative;
 }
 
 .watch .sun .clock {
@@ -26,7 +27,8 @@
 
 .watch .sun .clock .number {
   --rotation: 0;
-  font-size: 12px;
+  font-size: 1rem;
+  font-weight: 700;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -93,21 +95,27 @@
 }
 
 .watch .sun .clock .hand.hour {
-  width: 3px;
+  width: 4px;
   height: 25%;
-  background-color: black;
+  background-color: #2e2e3f;
 }
 
 .watch .sun .clock .hand.minute {
-  width: 3px;
+  width: 4px;
   height: 40%;
-  background-color: black;
+  background-color: #2e2e3f;
 }
 
 .watch .sun .clock .hand.second {
-  width: 1px;
+  width: 2px;
   height: 40%;
-  background-color: red;
+  background-color: #f44343;
+}
+
+.watch .sun .clock .hand.hour,
+.watch .sun .clock .hand.minute,
+.watch .sun .clock .hand.second {
+  z-index: 5;
 }
 
 .watch .sun .clock .circle {
@@ -119,7 +127,23 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 50%;
-  background-color: black;
+  background-color: #2e2e3f;
+}
+
+.watch .sun .clock .digital-watch-container {
+  width: 50%;
+  -webkit-transform: translate(47%, 500%);
+          transform: translate(47%, 500%);
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  font-weight: 500;
+  position: absolute;
+  z-index: 1;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #d8cb6a, #fff17e);
+  -webkit-box-shadow: 22px 22px 44px #978e4a, -22px -22px 44px #ffffa2;
+          box-shadow: 22px 22px 44px #978e4a, -22px -22px 44px #ffffa2;
+  padding: 5px;
 }
 
 .timer-function .container .wrapper .counter-area {
@@ -146,14 +170,12 @@
 }
 
 .timer-function .container .wrapper .counter-area .timer .count {
-  color: #2e2e3f;
   text-align: center;
   width: 100%;
   font-size: 2rem;
 }
 
 .timer-function .container .wrapper .counter-area .timer span {
-  color: #2e2e3f;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
@@ -163,6 +185,7 @@
   margin-top: 20px;
   border: none;
   background: rgba(121, 93, 124, 0.2);
+  color: #2e2e3f;
   padding: 6px 12px;
   border-radius: 10px;
   border: 2px solid grey;
@@ -182,6 +205,7 @@
 .alarm .alarm-input {
   border: none;
   background: rgba(121, 93, 124, 0.2);
+  color: #2e2e3f;
   padding: 6px 12px;
   border-radius: 10px;
   border: 2px solid grey;
@@ -203,6 +227,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.3rem;
 }
 
 .weather .temp-icon {
@@ -269,6 +294,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  color: #2e2e3f;
 }
 
 body {

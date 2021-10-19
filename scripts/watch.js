@@ -34,7 +34,7 @@ const updateDate = () => {
   var month = monthList[fullDate.getMonth()];
   var date = fullDate.getDate();
   let today = `${month} ${date},${year}`;
-  document.querySelector('#date').innerText = today;
+  document.querySelector('#todays-date').innerText = today;
 };
 
 setInterval(clock, 1000);
