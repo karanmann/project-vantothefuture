@@ -112,12 +112,6 @@
   background-color: #f44343;
 }
 
-.watch .sun .clock .hand.hour,
-.watch .sun .clock .hand.minute,
-.watch .sun .clock .hand.second {
-  z-index: 5;
-}
-
 .watch .sun .clock .circle {
   position: absolute;
   width: 15px;
@@ -302,6 +296,7 @@ body {
   background: linear-gradient(to bottom, #355c7d, #6c5b7b, #c06c84);
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
 
 body .watch-container {
@@ -333,6 +328,16 @@ body .watch-container .bottom-container {
       -ms-flex-align: center;
           align-items: center;
   width: 100vw;
+}
+
+@media only screen and (max-width: 900px) {
+  body .watch-container .bottom-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
 }
 
 body .surface {

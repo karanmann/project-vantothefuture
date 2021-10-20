@@ -66,9 +66,11 @@ startBtn.onclick = () => {
   console.log(val);
 
   if (val !== '') {
-      countDown = setInterval(timeCount, 1000, val);
-      resetBtn.removeAttribute('disabled');
+    countDown = setInterval(timeCount, 1000, val);
+    resetBtn.removeAttribute('disabled');
   }
+
+  sessionStorage.setItem("timerTime", val)  // SET IN SESSION STORAGE
 
 }
 
@@ -77,6 +79,7 @@ resetBtn.onclick = () => {
   resetBtn.setAttribute('disabled', 'true');
 
   input.value = '';
+  sessionStorage.clear(); // REMOVE FROM SESSION STORAGE
 
   dd.innerHTML = '00';
   hh.innerHTML = '00';

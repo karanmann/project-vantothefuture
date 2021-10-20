@@ -1,109 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Light</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Van to the Future</title>
-  <link rel="stylesheet" href="./styles/styles.css">
-</head>
+    <title>Van to the Future</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>
 
-<body>
+  </head>
+  <body class="body">
+    <div id="vantajs-bg"></div>
+    <div class="watch-container">
+      <section class="watch">
+        <div class="sun">
+          <div class="clock">
+          <div class="number number1">1</div>
+          <div class="number number2">2</div>
+          <div class="number number3">3</div>
+          <div class="number number4">4</div>
+          <div class="number number5">5</div>
+          <div class="number number6">6</div>
+          <div class="number number7">7</div>
+          <div class="number number8">8</div>
+          <div class="number number9">9</div>
+          <div class="number number10">10</div>
+          <div class="number number11">11</div>
+          <div class="number number12">12</div>
 
-  <div class="watch-container">
-    <section class="watch">
-      <div class="sun">
-        <div class="clock">
-        <div class="number number1">1</div>
-        <div class="number number2">2</div>
-        <div class="number number3">3</div>
-        <div class="number number4">4</div>
-        <div class="number number5">5</div>
-        <div class="number number6">6</div>
-        <div class="number number7">7</div>
-        <div class="number number8">8</div>
-        <div class="number number9">9</div>
-        <div class="number number10">10</div>
-        <div class="number number11">11</div>
-        <div class="number number12">12</div>
-        <div id="clockContainer">
-          <div class="hand hour" id="hour"></div>
-          <div class="hand minute" id="minute"></div>
-          <div class="hand second" id="second"></div>
-        </div> 
-        <div class="circle"></div>
-        <div class="digital-watch-container">
-          <div class="digital-watch" id="digital-watch"></div>
-          <div class="todays-date" id="todays-date"></div>
+          <div id="clockContainer">
+            <div class="hand hour" id="hour"></div>
+            <div class="hand minute" id="minute"></div>
+            <div class="hand second" id="second"></div>
+          </div> 
+          <div class="circle"></div>
+          
+          <div class="digital-watch-container">
+            <div class="digital-watch" id="digital-watch"></div>
+            <div class="todays-date" id="todays-date"></div>
+          </div>
         </div>
+      </section>
+
+      <div class="bottom-container">
+
+        <section>
+          <div class="weather">
+            <img class="temp-icon" id="temp-icon" src="./assets/icons/default.png" alt="weather Icon">
+            <div class="weather-content">
+              <p class="city-name" id="currentCityName">Loading...</p>
+              <p><span id="temp-value">Loading...</span><span id="temp-unit">&degc</span>  /  <span id="climate">Loading...</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="timer-function">
+          <div class="container">
+            <div class="wrapper">
+              <div class="counter-area">
+                <div class="timer">
+                  <h1 class="count" id="timer-day">00</h1>
+                  <span>days</span>
+                </div>
+                <div class="timer">
+                  <h1 class="count" id="timer-hour">00</h1>
+                  <span>hours</span>
+                </div>
+                <div class="timer">
+                  <h1 class="count" id="timer-minute">00</h1>
+                  <span>minutes</span>
+                </div>
+                <div class="timer">
+                  <h1 class="count" id="timer-second">00</h1>
+                  <span>seconds</span>
+                </div>
+              </div>
+              <input class="timer-input" type="datetime-local" id="timer-time-input">
+              <div class="button-area">
+                <button class="set-button" id="start">Start</button>
+                <button class="stop-button" id="reset" disabled>Reset</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="alarm">
+          <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
+          <div class="button-area">
+            <button class="set-button" onclick="setAlarm()">Set Alarm</button>
+            <button class="stop-button" onclick="stopAlarm()">Stop Alarm</button>
+          </div>
+        </section>
       </div>
+      <div class="surface"></div>
+      <div class="car">
+        <img src="./assets/images/Img_06.png" alt="">
+      </div>
+    </div>
+
+    <script src="./scripts/alarmClock.js"></script>
+    <script src="./scripts/countDownTimer.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/watch.js"></script>
+    <script src="./scripts/weather.js"></script>
+  </body>
       
-    </section>
-
-    <div class="bottom-container">
-      <section class="timer-function">
-        <div class="container">
-          <div class="wrapper">
-            <div class="counter-area">
-              <div class="timer">
-                <h1 class="count" id="timer-day">00</h1>
-                <span>days</span>
-              </div>
-              <div class="timer">
-                <h1 class="count" id="timer-hour">00</h1>
-                <span>hours</span>
-              </div>
-              <div class="timer">
-                <h1 class="count" id="timer-minute">00</h1>
-                <span>minutes</span>
-              </div>
-              <div class="timer">
-                <h1 class="count" id="timer-second">00</h1>
-                <span>seconds</span>
-              </div>
-            </div>
-            <input class="timer-input" type="datetime-local" id="timer-time-input">
-            <div class="button-area">
-              <button class="set-button" id="start">Start</button>
-              <button class="stop-button" id="reset" disabled>Reset</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="weather">
-          <img class="temp-icon" id="temp-icon" src="./assets/icons/default.png" alt="weather Icon">
-          <div class="weather-content">
-            <p class="city-name" id="currentCityName">Loading...</p>
-            <p><span id="temp-value">Loading...</span><span id="temp-unit">&degc</span>  /  <span id="climate">Loading...</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="alarm">
-        <input class="alarm-input" type="datetime-local" onchange="setAlarmTime(value)" name="alarmtime">
-        <div class="button-area">
-          <button class="set-button" onclick="setAlarm()">Set Alarm</button>
-          <button class="stop-button" onclick="stopAlarm()">Stop Alarm</button>
-        </div>
-      </section>
-    </div>
-    <div class="surface"></div>
-    <div class="car">
-      <img src="./assets/images/Img_06.png" alt="">
-    </div>
-  </div>
-
-  <script src="./scripts/alarmClock.js"></script>
-  <script src="./scripts/countDownTimer.js"></script>
-  <script src="./scripts/main.js"></script>
-  <script src="./scripts/watch.js"></script>
-  <script src="./scripts/weather.js"></script>
-</body>
 </html>
+
+ 

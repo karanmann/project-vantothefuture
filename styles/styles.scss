@@ -1,12 +1,13 @@
-$background-twilight: linear-gradient(to bottom, #355c7d, #6c5b7b, #c06c84);
-$sun-gradient: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(240, 225, 118) 76%);
-$sun-shadow: -4px -3px 78px 50px rgba(251,238,136,0.75);
-$font-color: #2e2e3f;
+// IMPORTS
+
+@import "./variables";
 @import "./watch";
 @import "./timer";
 @import "./alarm";
 @import "./weather";
 @import "./button";
+
+// APP CSS
 
 html, body {
   margin: 0;
@@ -19,6 +20,7 @@ body {
   background: $background-twilight;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 
   .watch-container {
     display: flex;
@@ -32,9 +34,15 @@ body {
       justify-content: space-evenly;
       align-items: center;
       width: 100vw;
+
+      @media only screen and (max-width:900px){
+        flex-direction: column;
+        gap: 20px;
+      }
     }
   }
   
+  //STYLING FOR MOVING VAN & ANIMATION
 
   .surface {
     height: 150px;
@@ -56,14 +64,12 @@ body {
   }
 
   @keyframes moveRight {
-    100% { transform: translate(-1300px);}
+    100% { transform: translate(-1300px)};
   }
 
   @keyframes suspension {
-    100% { transform: translateY(-1px);};
+    100% { transform: translateY(-1px)};
     50% { transform: translateY(2px);};
     0% { transform: translateY(-1px);};
   }
 }
-
-

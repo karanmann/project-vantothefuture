@@ -1,9 +1,9 @@
-const display = document.getElementById("digital-watch");
+const displayTime = document.getElementById("digital-watch");
 
 const audio = new Audio("../assets/music/bensound-memories.mp3");
 audio.loop = true;
 
-let currentTime = () => {
+function currentTime() {
   var date = new Date(); /* creating object of Date class */
   var hour = date.getHours();
   var min = date.getMinutes();
@@ -11,9 +11,9 @@ let currentTime = () => {
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
-  display.innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
+  displayTime.innerText = `${hour} : ${min} : ${sec}` /* adding time to the div */
   
-  var secondTimer = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+  // var secondTimer = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
 }
 
 function updateTime(secondTimer) {
