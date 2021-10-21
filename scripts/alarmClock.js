@@ -3,17 +3,22 @@ const displayTime = document.getElementById("digital-watch");
 const audio = new Audio("../assets/music/bensound-memories.mp3");
 audio.loop = true;
 
+let alarmTime = null;
+let alarmTimeout = null;
+
 function currentTime() {
   var date = new Date(); /* creating object of Date class */
   var hour = date.getHours();
   var min = date.getMinutes();
   var sec = date.getSeconds();
+
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
+
   displayTime.innerText = `${hour} : ${min} : ${sec}` /* adding time to the div */
   
-  // var secondTimer = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+  var secondTimer = setTimeout(() => { currentTime() }, 1000); /* setting timer */
 }
 
 function updateTime(secondTimer) {
@@ -26,7 +31,6 @@ function updateTime(secondTimer) {
 }
 
 function setAlarmTime(value) {
-  if (localStorage.getItem("alarmTime"))
   alarmTime = value;
 }
 
@@ -38,9 +42,9 @@ function setAlarm() {
     if (timeToAlarm > current) {
       const timeout = timeToAlarm.getTime() - current.getTime();
       alarmTimeout = setTimeout(() => audio.play(), timeout);
-      // alert('Alarm set');
+      alert('Alarm set');
     }
-    localStorage.setItem("alarmTime", input.val())
+    localStorage.setItem("setAlarmTime", input.val())
   }
 }
 
